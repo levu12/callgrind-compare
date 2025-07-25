@@ -1,7 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 
-echo "DEMONSTRATION: callgrind_differ with REAL callgrind data"
+echo "DEMONSTRATION: callgrind-compare with REAL callgrind data"
 echo "========================================================"
 echo ""
 
@@ -14,7 +14,7 @@ echo "   - simple_small_high_threshold.cg (500 elements sorted)"
 echo "   - simple_large_high_threshold.cg (2000 elements sorted)"
 echo ""
 
-../../target/release/callgrind_differ simple_small_high_threshold.cg simple_large_high_threshold.cg | head -15 || true
+../../target/release/callgrind-compare simple_small_high_threshold.cg simple_large_high_threshold.cg | head -15 || true
 
 echo ""
 echo "2. Testing with complex programs and CSV export:"
@@ -22,7 +22,7 @@ echo "   - Including programs that do quicksort, statistics, etc."
 echo ""
 
 # Test CSV export with multiple real files
-../../target/release/callgrind_differ \
+../../target/release/callgrind-compare \
     simple_small_high_threshold.cg \
     simple_large_high_threshold.cg \
     complex_medium_high_threshold.cg \
@@ -40,13 +40,13 @@ if [ -f "real_comparison.csv" ]; then
 fi
 
 echo ""
-echo "3. Testing with callgrind_differ's own execution profile:"
-echo "   These files show callgrind_differ running on real data:"
+echo "3. Testing with callgrind-compare's own execution profile:"
+echo "   These files show callgrind-compare running on real data:"
 echo ""
 
-../../target/release/callgrind_differ \
-    callgrind_differ_help_medium_threshold.cg \
-    callgrind_differ_compare_medium_threshold.cg | head -10 || true
+../../target/release/callgrind-compare \
+    callgrind-compare_help_medium_threshold.cg \
+    callgrind-compare_compare_medium_threshold.cg | head -10 || true
 
 echo ""
 echo "4. Verifying file origins - these are REAL callgrind_annotate outputs:"
@@ -65,7 +65,7 @@ echo "SUMMARY:"
 echo "========"
 echo "✓ Generated actual callgrind.out files using valgrind"
 echo "✓ Processed them with callgrind_annotate (the official tool)"  
-echo "✓ Used callgrind_differ to compare the annotate outputs"
+echo "✓ Used callgrind-compare to compare the annotate outputs"
 echo "✓ Tested CSV export functionality"
 echo "✓ Verified the data shows real program execution profiles"
 echo ""
