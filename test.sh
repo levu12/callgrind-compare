@@ -29,7 +29,7 @@ echo ""
     complex_large_high_threshold.cg \
     --csv-export real_comparison.csv \
     --csv-all-data \
-    --csv-names "Simple_Small,Simple_Large,Complex_Medium,Complex_Large"
+    --csv-names "Simple_Small" --csv-names "Simple_Large" --csv-names "Complex_Medium" --csv-names "Complex_Large"
 
 if [ -f "real_comparison.csv" ]; then
     echo "   ✓ CSV export successful: real_comparison.csv"

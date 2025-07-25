@@ -74,7 +74,7 @@ callgrind-compare baseline.cg optimized.cg --csv-export results.csv
 callgrind-compare baseline.cg v1.cg v2.cg \
   --csv-export results.csv \
   --csv-all-data \
-  --csv-names "Baseline,Version1,Version2"
+  --csv-names "Baseline" --csv-names "Version1" --csv-names "Version2"
 ```
 
 ### Mixed Input Types
@@ -158,7 +158,7 @@ callgrind_annotate --auto=no --threshold=99.99 "$callgrind_file" > my_run.cg
 - `--csv-percentages`: Include percentage columns
 - `--csv-differences`: Include difference columns  
 - `--csv-all-data`: Include both percentages and differences
-- `--csv-names [NAMES]`: Custom column names
+- `--csv-names [NAME]`: Custom column names (use multiple times for multiple names)
 
 ### Output Control
 
@@ -204,7 +204,7 @@ done
 callgrind-compare v1.0.cg v1.1.cg v1.2.cg \
   --csv-export evolution.csv \
   --csv-all-data \
-  --csv-names "v1.0,v1.1,v1.2"
+  --csv-names "v1.0" --csv-names "v1.1" --csv-names "v1.2"
 ```
 
 ### Advanced Sorting and Filtering

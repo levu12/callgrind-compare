@@ -300,12 +300,12 @@ pub struct Args {
     /// Include all data (IR counts, differences, and percentages) in CSV export.
     #[arg(long, default_value_t = false)]
     pub csv_all_data: bool,
-    /// A comma-separated list of column names for the CSV export.
+    /// Column names for the CSV export. Use multiple times to specify multiple names.
     ///
     /// There must be as many names as there are `callgrind_annotate` files given as argument
     /// (i.e. this does not account for columns from CSV files, which may already have their own
-    /// names.).
-    #[arg(long, num_args=0.., value_delimiter=',')]
+    /// names.). Use --csv-names "Name1" --csv-names "Name2" for names with spaces or commas.
+    #[arg(long, action = clap::ArgAction::Append)]
     pub csv_names: Vec<String>,
     /// A replacement to perform in the symbol names.
     ///
