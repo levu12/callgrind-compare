@@ -1,6 +1,6 @@
 [package]
 name = "callgrind-compare"
-version = "0.1.0"
+version = "0.2.0"
 edition = "2021"
 authors = ["levu12"]
 description = "A modern tool to compare callgrind_annotate outputs and track performance changes over time. Enhanced fork with new features including CSV support, mixed input types, and advanced column naming."
