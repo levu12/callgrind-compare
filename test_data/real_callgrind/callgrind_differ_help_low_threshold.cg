@@ -1,0 +1,158 @@
+--------------------------------------------------------------------------------
+Profile data file 'callgrind.out.callgrind_differ_help' (creator: callgrind-3.18.1)
+--------------------------------------------------------------------------------
+I1 cache: 
+D1 cache: 
+LL cache: 
+Timerange: Basic block 0 - 154483
+Trigger: Program termination
+Profiled target:  ./../../target/release/callgrind_differ simple_small_high_threshold.cg --help (PID 70835, part 1)
+Events recorded:  Ir
+Events shown:     Ir
+Event sort order: Ir
+Thresholds:       90.0
+Include dirs:     
+User annotated:   
+Auto-annotation:  off
+
+--------------------------------------------------------------------------------
+Ir               
+--------------------------------------------------------------------------------
+746,085 (100.0%)  PROGRAM TOTALS
+
+--------------------------------------------------------------------------------
+Ir               file:function
+--------------------------------------------------------------------------------
+59,053 ( 7.92%)  /home/lpv2013/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/anstream-0.6.13/src/adapter/strip.rs:anstream::adapter::strip::next_bytes [/home/lpv2013/callgrind_differ/target/release/callgrind_differ]
+51,828 ( 6.95%)  ./stdio-common/./stdio-common/vfscanf-internal.c:__vfscanf_internal [/usr/lib/x86_64-linux-gnu/libc.so.6]
+42,561 ( 5.70%)  ./elf/./elf/dl-lookup.c:do_lookup_x [/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2]
+40,450 ( 5.42%)  ./elf/../sysdeps/x86_64/dl-machine.h:_dl_relocate_object
+34,703 ( 4.65%)  ./elf/./elf/dl-lookup.c:_dl_lookup_symbol_x [/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2]
+28,245 ( 3.79%)  /home/lpv2013/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/anstyle-parse-0.2.3/src/state/mod.rs:anstream::adapter::strip::next_bytes
+27,427 ( 3.68%)  ./malloc/./malloc/malloc.c:_int_malloc [/usr/lib/x86_64-linux-gnu/libc.so.6]
+26,276 ( 3.52%)  ./string/../sysdeps/x86_64/multiarch/memmove-vec-unaligned-erms.S:__memcpy_avx_unaligned_erms [/usr/lib/x86_64-linux-gnu/libc.so.6]
+25,320 ( 3.39%)  ./malloc/./malloc/malloc.c:_int_free [/usr/lib/x86_64-linux-gnu/libc.so.6]
+24,430 ( 3.27%)  ./stdlib/../stdlib/strtol_l.c:____strtoul_l_internal [/usr/lib/x86_64-linux-gnu/libc.so.6]
+22,609 ( 3.03%)  ./elf/./elf/do-rel.h:_dl_relocate_object
+19,140 ( 2.57%)  ./elf/./elf/dl-tunables.c:__GI___tunables_init [/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2]
+14,257 ( 1.91%)  ./malloc/./malloc/malloc.c:malloc [/usr/lib/x86_64-linux-gnu/libc.so.6]
+13,814 ( 1.85%)  ./string/../sysdeps/x86_64/strcmp.S:strcmp [/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2]
+12,004 ( 1.61%)  /home/lpv2013/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/str/pattern.rs:clap_builder::builder::styled_str::StyledStr::replace_newline_var
+ 9,428 ( 1.26%)  /home/lpv2013/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/anstyle-parse-0.2.3/src/state/definitions.rs:anstream::adapter::strip::next_bytes
+ 9,347 ( 1.25%)  /home/lpv2013/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/iter/traits/iterator.rs:anstream::adapter::strip::next_bytes
+ 9,081 ( 1.22%)  ./elf/./elf/dl-lookup.c:check_match [/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2]
+ 8,492 ( 1.14%)  ./malloc/./malloc/malloc.c:realloc [/usr/lib/x86_64-linux-gnu/libc.so.6]
+ 7,304 ( 0.98%)  ./malloc/./malloc/malloc.c:free [/usr/lib/x86_64-linux-gnu/libc.so.6]
+ 7,294 ( 0.98%)  ./malloc/./malloc/malloc.c:_int_realloc [/usr/lib/x86_64-linux-gnu/libc.so.6]
+ 6,579 ( 0.88%)  /rustc/6b00bc3880198600130e1cf62b8f8a93494488cc/library/core/src/slice/memchr.rs:core::slice::memchr::memchr_aligned [/home/lpv2013/callgrind_differ/target/release/callgrind_differ]
+ 6,250 ( 0.84%)  /home/lpv2013/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/raw_vec/mod.rs:alloc::raw_vec::RawVecInner<A>::reserve::do_reserve_and_handle [/home/lpv2013/callgrind_differ/target/release/callgrind_differ]
+ 5,945 ( 0.80%)  /rustc/6b00bc3880198600130e1cf62b8f8a93494488cc/library/core/src/fmt/mod.rs:core::fmt::write [/home/lpv2013/callgrind_differ/target/release/callgrind_differ]
+ 5,876 ( 0.79%)  /rustc/6b00bc3880198600130e1cf62b8f8a93494488cc/library/core/src/fmt/mod.rs:core::fmt::Formatter::pad [/home/lpv2013/callgrind_differ/target/release/callgrind_differ]
+ 5,688 ( 0.76%)  /home/lpv2013/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/anstyle-1.0.6/src/effect.rs:anstyle::style::Style::fmt_to
+ 5,565 ( 0.75%)  ./elf/./elf/dl-version.c:_dl_check_map_versions [/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2]
+ 4,923 ( 0.66%)  /home/lpv2013/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/slice/iter/macros.rs:anstream::adapter::strip::next_bytes
+ 4,759 ( 0.64%)  /home/lpv2013/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/ptr/non_null.rs:anstream::adapter::strip::next_bytes
+ 3,776 ( 0.51%)  /home/lpv2013/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/raw_vec/mod.rs:_ZN5alloc7raw_vec11finish_grow17ha4acb4a325db170aE.llvm.7166644318285208313 [/home/lpv2013/callgrind_differ/target/release/callgrind_differ]
+ 3,729 ( 0.50%)  /home/lpv2013/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/slice/index.rs:clap_builder::builder::styled_str::StyledStr::replace_newline_var
+ 3,725 ( 0.50%)  ./libio/./libio/iogetdelim.c:getdelim [/usr/lib/x86_64-linux-gnu/libc.so.6]
+ 3,648 ( 0.49%)  ./libio/./libio/genops.c:_IO_sputbackc [/usr/lib/x86_64-linux-gnu/libc.so.6]
+ 3,292 ( 0.44%)  ./malloc/./malloc/malloc.c:malloc_consolidate [/usr/lib/x86_64-linux-gnu/libc.so.6]
+ 3,242 ( 0.43%)  /home/lpv2013/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap_builder-4.5.2/src/output/textwrap/core.rs:clap_builder::output::textwrap::core::display_width
+ 3,085 ( 0.41%)  ./elf/../sysdeps/x86/dl-cacheinfo.h:intel_check_word.constprop.0 [/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2]
+ 2,908 ( 0.39%)  /home/lpv2013/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/anstream-0.6.13/src/adapter/strip.rs:_ZN8anstream7adapter5strip8next_str17h25f3f584adcbeb54E.llvm.18352387898321977320 [/home/lpv2013/callgrind_differ/target/release/callgrind_differ]
+ 2,724 ( 0.37%)  /home/lpv2013/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/str/pattern.rs:<core::str::pattern::CharSearcher as core::str::pattern::Searcher>::next_match [/home/lpv2013/callgrind_differ/target/release/callgrind_differ]
+ 2,656 ( 0.36%)  /rustc/6b00bc3880198600130e1cf62b8f8a93494488cc/library/std/src/sys/alloc/unix.rs:_RNvCs691rhTbG0Ee_7___rustc11___rdl_alloc
+ 2,625 ( 0.35%)  /home/lpv2013/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/anstyle-1.0.6/src/style.rs:anstyle::style::Style::fmt_to [/home/lpv2013/callgrind_differ/target/release/callgrind_differ]
+ 2,588 ( 0.35%)  /home/lpv2013/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap_builder-4.5.2/src/builder/arg.rs:clap_builder::builder::arg::Arg::stylize_arg_suffix [/home/lpv2013/callgrind_differ/target/release/callgrind_differ]
+ 2,421 ( 0.32%)  /home/lpv2013/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/char/methods.rs:clap_builder::output::textwrap::core::display_width
+ 2,304 ( 0.31%)  ./libio/./libio/strops.c:_IO_str_init_static_internal [/usr/lib/x86_64-linux-gnu/libc.so.6]
+ 2,262 ( 0.30%)  ./elf/./elf/dl-load.c:_dl_map_object_from_fd [/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2]
+ 2,222 ( 0.30%)  ./elf/../bits/stdlib-bsearch.h:intel_check_word.constprop.0
+ 2,156 ( 0.29%)  /home/lpv2013/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/alloc/layout.rs:alloc::raw_vec::RawVecInner<A>::reserve::do_reserve_and_handle
+ 1,878 ( 0.25%)  ./string/../sysdeps/x86_64/multiarch/memchr-avx2.S:__memchr_avx2 [/usr/lib/x86_64-linux-gnu/libc.so.6]
+ 1,860 ( 0.25%)  ./elf/./elf/dl-cache.c:_dl_cache_libcmp [/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2]
+ 1,792 ( 0.24%)  /home/lpv2013/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap_builder-4.5.2/src/builder/styled_str.rs:<clap_builder::builder::styled_str::StyledStr as core::fmt::Write>::write_str [/home/lpv2013/callgrind_differ/target/release/callgrind_differ]
+ 1,785 ( 0.24%)  /rustc/6b00bc3880198600130e1cf62b8f8a93494488cc/library/core/src/str/pattern.rs:core::str::pattern::StrSearcher::new [/home/lpv2013/callgrind_differ/target/release/callgrind_differ]
+ 1,784 ( 0.24%)  /home/lpv2013/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap_builder-4.5.2/src/builder/arg.rs:_ZN75_$LT$callgrind_differ..args..Args$u20$as$u20$clap_builder..derive..Args$GT$12augment_args17hdea080b8cc91504eE.llvm.9636487036425525850
+ 1,750 ( 0.23%)  /rustc/6b00bc3880198600130e1cf62b8f8a93494488cc/library/std/src/sys/alloc/unix.rs:_RNvCs691rhTbG0Ee_7___rustc13___rdl_realloc
+ 1,712 ( 0.23%)  /rustc/6b00bc3880198600130e1cf62b8f8a93494488cc/library/core/src/fmt/mod.rs:<str as core::fmt::Display>::fmt [/home/lpv2013/callgrind_differ/target/release/callgrind_differ]
+ 1,680 ( 0.23%)  ./stdio-common/./stdio-common/isoc99_sscanf.c:__isoc99_sscanf [/usr/lib/x86_64-linux-gnu/libc.so.6]
+ 1,646 ( 0.22%)  ./elf/./elf/dl-tunables.h:__GI___tunables_init
+ 1,613 ( 0.22%)  /home/lpv2013/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/result.rs:_ZN5alloc7raw_vec11finish_grow17ha4acb4a325db170aE.llvm.7166644318285208313
+ 1,470 ( 0.20%)  /home/lpv2013/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/string.rs:<alloc::string::String as core::fmt::Write>::write_str [/home/lpv2013/callgrind_differ/target/release/callgrind_differ]
+ 1,465 ( 0.20%)  ./elf/../sysdeps/generic/dl-protected.h:do_lookup_x
+ 1,364 ( 0.18%)  ./elf/./elf/dl-deps.c:_dl_map_object_deps [/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2]
+ 1,356 ( 0.18%)  ./string/../sysdeps/x86_64/multiarch/memchr-avx2.S:__rawmemchr_avx2 [/usr/lib/x86_64-linux-gnu/libc.so.6]
+ 1,345 ( 0.18%)  /home/lpv2013/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/str/validations.rs:clap_builder::output::textwrap::core::display_width
+ 1,344 ( 0.18%)  /home/lpv2013/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap_builder-4.5.2/src/output/help_template.rs:clap_builder::output::help_template::HelpTemplate::write_args [/home/lpv2013/callgrind_differ/target/release/callgrind_differ]
+ 1,340 ( 0.18%)  /rustc/6b00bc3880198600130e1cf62b8f8a93494488cc/library/core/src/slice/memchr.rs:core::slice::memchr::memrchr [/home/lpv2013/callgrind_differ/target/release/callgrind_differ]
+ 1,314 ( 0.18%)  /rustc/6b00bc3880198600130e1cf62b8f8a93494488cc/library/core/src/slice/iter/macros.rs:core::fmt::write
+ 1,303 ( 0.17%)  /rustc/6b00bc3880198600130e1cf62b8f8a93494488cc/library/core/src/slice/iter/macros.rs:core::slice::memchr::memrchr
+ 1,293 ( 0.17%)  ./nptl/./nptl/pthread_getattr_np.c:pthread_getattr_np@@GLIBC_2.32 [/usr/lib/x86_64-linux-gnu/libc.so.6]
+ 1,275 ( 0.17%)  ./elf/./elf/rtld.c:dl_main [/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2]
+ 1,246 ( 0.17%)  ./malloc/./malloc/malloc.c:unlink_chunk.constprop.0 [/usr/lib/x86_64-linux-gnu/libc.so.6]
+ 1,230 ( 0.16%)  /home/lpv2013/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/anstyle-parse-0.2.3/src/state/mod.rs:_ZN8anstream7adapter5strip8next_str17h25f3f584adcbeb54E.llvm.18352387898321977320
+ 1,207 ( 0.16%)  ./libio/./libio/genops.c:_IO_setb [/usr/lib/x86_64-linux-gnu/libc.so.6]
+ 1,161 ( 0.16%)  /home/lpv2013/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/str.rs:alloc::str::join_generic_copy [/home/lpv2013/callgrind_differ/target/release/callgrind_differ]
+ 1,134 ( 0.15%)  ./libio/./libio/genops.c:_IO_no_init [/usr/lib/x86_64-linux-gnu/libc.so.6]
+ 1,129 ( 0.15%)  ./libio/./libio/genops.c:_IO_old_init [/usr/lib/x86_64-linux-gnu/libc.so.6]
+ 1,117 ( 0.15%)  /home/lpv2013/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/option.rs:clap_builder::builder::arg::Arg::stylize_arg_suffix
+ 1,080 ( 0.14%)  /rustc/6b00bc3880198600130e1cf62b8f8a93494488cc/library/alloc/src/string.rs:<alloc::string::String as core::fmt::Write>::write_str [/home/lpv2013/callgrind_differ/target/release/callgrind_differ]
+ 1,052 ( 0.14%)  ./string/../sysdeps/x86_64/multiarch/memcmp-avx2-movbe.S:__memcmp_avx2_movbe [/usr/lib/x86_64-linux-gnu/libc.so.6]
+ 1,008 ( 0.14%)  ./stdio-common/../include/scratch_buffer.h:__vfscanf_internal
+ 1,008 ( 0.14%)  /home/lpv2013/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/raw_vec/mod.rs:<clap_builder::builder::styled_str::StyledStr as core::fmt::Write>::write_str
+ 1,000 ( 0.13%)  /rustc/6b00bc3880198600130e1cf62b8f8a93494488cc/library/std/src/alloc.rs:_RNvCs691rhTbG0Ee_7___rustc13___rdl_realloc [/home/lpv2013/callgrind_differ/target/release/callgrind_differ]
+   996 ( 0.13%)  ./malloc/./malloc/arena.c:free
+   996 ( 0.13%)  /home/lpv2013/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/vec/spec_from_iter.rs:<alloc::vec::Vec<T> as alloc::vec::spec_from_iter::SpecFromIter<T,I>>::from_iter [/home/lpv2013/callgrind_differ/target/release/callgrind_differ]
+   984 ( 0.13%)  ./elf/./elf/dl-misc.c:_dl_name_match_p [/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2]
+   946 ( 0.13%)  ./elf/./elf/dl-load.c:open_verify.constprop.0 [/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2]
+   922 ( 0.12%)  ./elf/./elf/dl-load.c:_dl_map_object [/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2]
+   890 ( 0.12%)  /home/lpv2013/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/raw_vec/mod.rs:clap_builder::builder::styled_str::StyledStr::indent
+   883 ( 0.12%)  ./elf/../sysdeps/x86_64/dl-machine.h:_dl_start
+   878 ( 0.12%)  /rustc/6b00bc3880198600130e1cf62b8f8a93494488cc/library/core/src/ptr/non_null.rs:core::fmt::write
+   876 ( 0.12%)  ./elf/./elf/dl-load.c:open_path [/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2]
+   868 ( 0.12%)  /home/lpv2013/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/num/uint_macros.rs:<core::str::pattern::CharSearcher as core::str::pattern::Searcher>::next_match
+   861 ( 0.12%)  /home/lpv2013/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/fmt/mod.rs:<&T as core::fmt::Display>::fmt [/home/lpv2013/callgrind_differ/target/release/callgrind_differ]
+   843 ( 0.11%)  ./stdlib/./stdlib/getenv.c:getenv [/usr/lib/x86_64-linux-gnu/libc.so.6]
+   817 ( 0.11%)  ./elf/./elf/get-dynamic-info.h:_dl_map_object_from_fd
+   815 ( 0.11%)  ./elf/./elf/do-rel.h:_dl_start
+   806 ( 0.11%)  /rustc/6b00bc3880198600130e1cf62b8f8a93494488cc/library/alloc/src/raw_vec/mod.rs:alloc::raw_vec::RawVecInner<A>::reserve::do_reserve_and_handle [/home/lpv2013/callgrind_differ/target/release/callgrind_differ]
+   805 ( 0.11%)  /rustc/6b00bc3880198600130e1cf62b8f8a93494488cc/library/core/src/fmt/mod.rs:core::fmt::write'2 [/home/lpv2013/callgrind_differ/target/release/callgrind_differ]
+   789 ( 0.11%)  /rustc/6b00bc3880198600130e1cf62b8f8a93494488cc/library/alloc/src/raw_vec/mod.rs:alloc::raw_vec::finish_grow [/home/lpv2013/callgrind_differ/target/release/callgrind_differ]
+   784 ( 0.11%)  /home/lpv2013/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/cmp.rs:alloc::raw_vec::RawVecInner<A>::reserve::do_reserve_and_handle
+   779 ( 0.10%)  /rustc/6b00bc3880198600130e1cf62b8f8a93494488cc/library/core/src/fmt/rt.rs:core::fmt::write
+   776 ( 0.10%)  ./malloc/./malloc/malloc.c:ptmalloc_init.part.0
+   775 ( 0.10%)  ./elf/../sysdeps/generic/ldsodefs.h:do_lookup_x
+   770 ( 0.10%)  ./elf/./elf/dl-minimal-malloc.c:__minimal_malloc [/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2]
+   769 ( 0.10%)  ./elf/./elf/dl-object.c:_dl_new_object [/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2]
+   768 ( 0.10%)  ./elf/./elf/dl-hwcaps.c:_dl_important_hwcaps [/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2]
+   756 ( 0.10%)  ./malloc/./malloc/arena.c:realloc
+   720 ( 0.10%)  ./stdio-common/../libio/strfile.h:__isoc99_sscanf
+   715 ( 0.10%)  /home/lpv2013/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/anstyle-1.0.6/src/style.rs:clap_builder::builder::arg::Arg::stylize_arg_suffix
+   714 ( 0.10%)  /rustc/6b00bc3880198600130e1cf62b8f8a93494488cc/library/std/src/io/stdio.rs:<std::io::stdio::StdoutLock as std::io::Write>::write_all [/home/lpv2013/callgrind_differ/target/release/callgrind_differ]
+   700 ( 0.09%)  /home/lpv2013/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/slice.rs:alloc::slice::<impl [T]>::repeat [/home/lpv2013/callgrind_differ/target/release/callgrind_differ]
+   698 ( 0.09%)  ./elf/./elf/dl-tunables.c:__tunable_get_val [/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2]
+   689 ( 0.09%)  ./elf/./elf/dl-cache.c:_dl_load_cache_lookup [/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2]
+   688 ( 0.09%)  ./elf/./elf/dl-reloc.c:_dl_relocate_object [/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2]
+   685 ( 0.09%)  /home/lpv2013/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/slice/memchr.rs:<core::str::pattern::CharSearcher as core::str::pattern::Searcher>::next_match
+   666 ( 0.09%)  /home/lpv2013/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/raw_vec/mod.rs:_ZN4core3ptr52drop_in_place$LT$clap_builder..builder..arg..Arg$GT$17h9c482e844997e4ebE.llvm.4102904063996710285
+   652 ( 0.09%)  /rustc/6b00bc3880198600130e1cf62b8f8a93494488cc/library/std/src/alloc.rs:_RNvCs691rhTbG0Ee_7___rustc13___rdl_dealloc [/home/lpv2013/callgrind_differ/target/release/callgrind_differ]
+   652 ( 0.09%)  /rustc/6b00bc3880198600130e1cf62b8f8a93494488cc/library/std/src/sys/alloc/unix.rs:_RNvCs691rhTbG0Ee_7___rustc13___rdl_dealloc
+   629 ( 0.08%)  /home/lpv2013/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap_builder-4.5.2/src/builder/arg.rs:clap_builder::builder::arg::Arg::stylized [/home/lpv2013/callgrind_differ/target/release/callgrind_differ]
+   628 ( 0.08%)  /rustc/6b00bc3880198600130e1cf62b8f8a93494488cc/library/std/src/io/buffered/bufwriter.rs:std::io::buffered::bufwriter::BufWriter<W>::flush_buf [/home/lpv2013/callgrind_differ/target/release/callgrind_differ]
+   610 ( 0.08%)  /home/lpv2013/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap_builder-4.5.2/src/output/help_template.rs:clap_builder::output::help_template::HelpTemplate::help [/home/lpv2013/callgrind_differ/target/release/callgrind_differ]
+   596 ( 0.08%)  ./elf/../sysdeps/x86/dl-cacheinfo.h:handle_intel.constprop.0 [/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2]
+   588 ( 0.08%)  /home/lpv2013/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/result.rs:alloc::raw_vec::RawVecInner<A>::reserve::do_reserve_and_handle
+   583 ( 0.08%)  /home/lpv2013/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap_builder-4.5.2/src/output/help_template.rs:clap_builder::output::help_template::HelpTemplate::spec_vals [/home/lpv2013/callgrind_differ/target/release/callgrind_differ]
+   556 ( 0.07%)  /home/lpv2013/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/raw_vec/mod.rs:clap_builder::builder::arg::Arg::stylize_arg_suffix
+   552 ( 0.07%)  /home/lpv2013/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/iter/traits/iterator.rs:_ZN8anstream7adapter5strip8next_str17h25f3f584adcbeb54E.llvm.18352387898321977320
+   532 ( 0.07%)  /home/lpv2013/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/raw_vec/mod.rs:<alloc::string::String as core::fmt::Write>::write_str
+   530 ( 0.07%)  /home/lpv2013/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap_builder-4.5.2/src/builder/arg_group.rs:_ZN75_$LT$callgrind_differ..args..Args$u20$as$u20$clap_builder..derive..Args$GT$12augment_args17hdea080b8cc91504eE.llvm.9636487036425525850
+   528 ( 0.07%)  ./string/../sysdeps/x86_64/multiarch/../strchr.S:index [/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2]
+   528 ( 0.07%)  /rustc/6b00bc3880198600130e1cf62b8f8a93494488cc/library/core/src/slice/iter/macros.rs:alloc::fmt::format::format_inner
+   526 ( 0.07%)  /home/lpv2013/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap_builder-4.5.2/src/builder/command.rs:clap_builder::builder::command::Command::_build_self [/home/lpv2013/callgrind_differ/target/release/callgrind_differ]
+   523 ( 0.07%)  /home/lpv2013/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/raw_vec/mod.rs:alloc::raw_vec::RawVec<T,A>::grow_one [/home/lpv2013/callgrind_differ/target/release/callgrind_differ]
+   520 ( 0.07%)  ./nptl/./nptl/libc-cleanup.c:__libc_cleanup_push_defer [/usr/lib/x86_64-linux-gnu/libc.so.6]
+   519 ( 0.07%)  ./string/../sysdeps/x86_64/multiarch/strlen-vec.S:strlen [/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2]
+   517 ( 0.07%)  ./string/../sysdeps/x86_64/multiarch/memmove-vec-unaligned-erms.S:mempcpy [/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2]
+

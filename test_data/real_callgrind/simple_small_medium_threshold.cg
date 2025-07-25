@@ -1,0 +1,43 @@
+--------------------------------------------------------------------------------
+Profile data file 'callgrind.out.simple_small' (creator: callgrind-3.18.1)
+--------------------------------------------------------------------------------
+I1 cache: 
+D1 cache: 
+LL cache: 
+Timerange: Basic block 0 - 310419
+Trigger: Program termination
+Profiled target:  ./test_program_simple 500 (PID 70687, part 1)
+Events recorded:  Ir
+Events shown:     Ir
+Event sort order: Ir
+Thresholds:       95.0
+Include dirs:     
+User annotated:   
+Auto-annotation:  off
+
+--------------------------------------------------------------------------------
+Ir                 
+--------------------------------------------------------------------------------
+1,425,176 (100.0%)  PROGRAM TOTALS
+
+--------------------------------------------------------------------------------
+Ir                  file:function
+--------------------------------------------------------------------------------
+1,126,749 (79.06%)  test_program_simple.c:bubble_sort [/home/lpv2013/callgrind_differ/test_data/real_callgrind/test_program_simple]
+   31,644 ( 2.22%)  test_program_simple.c:string_processing [/home/lpv2013/callgrind_differ/test_data/real_callgrind/test_program_simple]
+   28,242 ( 1.98%)  ./stdio-common/./stdio-common/vfprintf-internal.c:__vfprintf_internal [/usr/lib/x86_64-linux-gnu/libc.so.6]
+   24,122 ( 1.69%)  ./elf/./elf/dl-lookup.c:do_lookup_x [/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2]
+   23,121 ( 1.62%)  ./libio/./libio/genops.c:_IO_default_xsputn [/usr/lib/x86_64-linux-gnu/libc.so.6]
+   20,965 ( 1.47%)  ./elf/./elf/dl-lookup.c:_dl_lookup_symbol_x [/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2]
+   19,140 ( 1.34%)  ./elf/./elf/dl-tunables.c:__GI___tunables_init [/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2]
+   17,938 ( 1.26%)  ./elf/../sysdeps/x86_64/dl-machine.h:_dl_relocate_object
+   14,516 ( 1.02%)  ./malloc/./malloc/malloc.c:_int_malloc [/usr/lib/x86_64-linux-gnu/libc.so.6]
+    9,976 ( 0.70%)  ./elf/./elf/do-rel.h:_dl_relocate_object
+    8,458 ( 0.59%)  ./malloc/./malloc/malloc.c:_int_free [/usr/lib/x86_64-linux-gnu/libc.so.6]
+    6,027 ( 0.42%)  test_program_simple.c:main [/home/lpv2013/callgrind_differ/test_data/real_callgrind/test_program_simple]
+    5,782 ( 0.41%)  ./string/../sysdeps/x86_64/strcmp.S:strcmp [/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2]
+    5,700 ( 0.40%)  ./libio/./libio/vsnprintf.c:__vsnprintf_internal [/usr/lib/x86_64-linux-gnu/libc.so.6]
+    5,068 ( 0.36%)  ./elf/./elf/dl-lookup.c:check_match [/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2]
+    4,800 ( 0.34%)  ./libio/./libio/strops.c:_IO_str_init_static_internal [/usr/lib/x86_64-linux-gnu/libc.so.6]
+    4,486 ( 0.31%)  ./malloc/./malloc/malloc.c:malloc [/usr/lib/x86_64-linux-gnu/libc.so.6]
+

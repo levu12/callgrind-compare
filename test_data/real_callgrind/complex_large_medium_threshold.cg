@@ -1,0 +1,46 @@
+--------------------------------------------------------------------------------
+Profile data file 'callgrind.out.complex_large' (creator: callgrind-3.18.1)
+--------------------------------------------------------------------------------
+I1 cache: 
+D1 cache: 
+LL cache: 
+Timerange: Basic block 0 - 1045896
+Trigger: Program termination
+Profiled target:  ./test_program_complex 5000 (PID 70803, part 1)
+Events recorded:  Ir
+Events shown:     Ir
+Event sort order: Ir
+Thresholds:       95.0
+Include dirs:     
+User annotated:   
+Auto-annotation:  off
+
+--------------------------------------------------------------------------------
+Ir                 
+--------------------------------------------------------------------------------
+6,157,042 (100.0%)  PROGRAM TOTALS
+
+--------------------------------------------------------------------------------
+Ir                  file:function
+--------------------------------------------------------------------------------
+1,594,377 (25.90%)  ./stdio-common/./stdio-common/vfprintf-internal.c:__vfprintf_internal [/usr/lib/x86_64-linux-gnu/libc.so.6]
+1,152,230 (18.71%)  test_program_complex.c:partition [/home/lpv2013/callgrind_differ/test_data/real_callgrind/test_program_complex]
+  883,071 (14.34%)  ./libio/./libio/genops.c:_IO_default_xsputn [/usr/lib/x86_64-linux-gnu/libc.so.6]
+  324,528 ( 5.27%)  ./stdio-common/./stdio-common/_itoa.c:_itoa_word [/usr/lib/x86_64-linux-gnu/libc.so.6]
+  285,000 ( 4.63%)  ./libio/./libio/vsnprintf.c:__vsnprintf_internal [/usr/lib/x86_64-linux-gnu/libc.so.6]
+  240,000 ( 3.90%)  ./libio/./libio/strops.c:_IO_str_init_static_internal [/usr/lib/x86_64-linux-gnu/libc.so.6]
+  190,190 ( 3.09%)  ./string/../sysdeps/x86_64/multiarch/strchr-avx2.S:__strchrnul_avx2 [/usr/lib/x86_64-linux-gnu/libc.so.6]
+  159,356 ( 2.59%)  ./stdlib/./stdlib/random_r.c:random_r [/usr/lib/x86_64-linux-gnu/libc.so.6]
+  155,000 ( 2.52%)  ./debug/./debug/snprintf_chk.c:__snprintf_chk [/usr/lib/x86_64-linux-gnu/libc.so.6]
+  120,024 ( 1.95%)  ./libio/./libio/genops.c:_IO_setb [/usr/lib/x86_64-linux-gnu/libc.so.6]
+  115,000 ( 1.87%)  ./libio/./libio/genops.c:_IO_no_init [/usr/lib/x86_64-linux-gnu/libc.so.6]
+  115,000 ( 1.87%)  ./libio/./libio/genops.c:_IO_old_init [/usr/lib/x86_64-linux-gnu/libc.so.6]
+  105,000 ( 1.71%)  ./stdlib/./stdlib/random.c:random [/usr/lib/x86_64-linux-gnu/libc.so.6]
+   95,081 ( 1.54%)  ./stdio-common/../libio/libioP.h:__vfprintf_internal
+   95,064 ( 1.54%)  ./stdio-common/./stdio-common/printf-parse.h:__vfprintf_internal
+   55,040 ( 0.89%)  test_program_complex.c:main [/home/lpv2013/callgrind_differ/test_data/real_callgrind/test_program_complex]
+   55,023 ( 0.89%)  test_program_complex.c:compute_statistics [/home/lpv2013/callgrind_differ/test_data/real_callgrind/test_program_complex]
+   44,000 ( 0.71%)  ./libio/./libio/iopadn.c:_IO_padn [/usr/lib/x86_64-linux-gnu/libc.so.6]
+   42,245 ( 0.69%)  test_program_complex.c:quicksort [/home/lpv2013/callgrind_differ/test_data/real_callgrind/test_program_complex]
+   40,023 ( 0.65%)  /usr/include/x86_64-linux-gnu/bits/stdio2.h:main
+

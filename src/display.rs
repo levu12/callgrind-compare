@@ -63,6 +63,13 @@ impl<'a> Displayer<'a> {
         ret
     }
 
+    /// Helper method to conditionally print color codes.
+    fn print_color(&self, color_code: &str) {
+        if self.config.color.should_color() {
+            print!("{color_code}");
+        }
+    }
+
     /// Display the [`Records`] on the standard output.
     fn display(&self) {
         self.show_header();
@@ -166,16 +173,18 @@ impl<'a> Displayer<'a> {
             print_right("-", (self.max_total_ir_width + 1) as usize);
         } else if ir > reference_ir {
             // Increase, show red.
-            print!("\x1B[31m+");
+            self.print_color("\x1B[31m");
+            print!("+");
             let s = format!("{diff}");
             print_right(&s, self.max_total_ir_width as usize);
-            print!("\x1B[0m");
+            self.print_color("\x1B[0m");
         } else {
             // Decrease, show green
-            print!("\x1B[32m-");
+            self.print_color("\x1B[32m");
+            print!("-");
             let s = format!("{diff}");
             print_right(&s, self.max_total_ir_width as usize);
-            print!("\x1B[0m");
+            self.print_color("\x1B[0m");
         }
     }
 
@@ -193,24 +202,26 @@ impl<'a> Displayer<'a> {
             print_right("- ", PERCENTDIFF_WIDTH as usize);
         } else if reference_ir > ir {
             // Decrease, show green.
-            print!("\x1B[32m-");
+            self.print_color("\x1B[32m");
+            print!("-");
             let s = format!("{percent:7.3}%");
             print_right(&s, (PERCENTDIFF_WIDTH - 1) as usize);
-            print!("\x1B[0m");
+            self.print_color("\x1B[0m");
         } else {
             // Increase, show red
             if percent < 1000.0 {
-                print!("\x1B[31m+");
+                self.print_color("\x1B[31m");
+                print!("+");
                 let s = format!("{percent:7.3}%");
                 print_right(&s, (PERCENTDIFF_WIDTH - 1) as usize);
             } else {
                 // Too high an increase, show as bold red ratio.
-                print!("\x1B[31;1m");
+                self.print_color("\x1B[31;1m");
                 let ratio = percent / 100.0;
                 let s = format!("{ratio:7.3}x");
                 print_right(&s, PERCENTDIFF_WIDTH as usize);
             }
-            print!("\x1B[0m");
+            self.print_color("\x1B[0m");
         }
     }
 

@@ -184,6 +184,214 @@ impl Records {
             );
         }
     }
+
+    /// Load records from a CSV file.
+    ///
+    /// The CSV file should have the following format:
+    /// - First column: symbol names
+    /// - Subsequent columns: IR counts for each run
+    /// - Optional header row (detected automatically)
+    pub fn from_csv_file<P: AsRef<Path>>(
+        path: P,
+        replacements: &[StringReplacement],
+    ) -> Result<Self> {
+        let file = File::open(path)?;
+        let mut reader = csv::ReaderBuilder::new()
+            .has_headers(false)
+            .from_reader(file);
+
+        let mut records = Self::new();
+        let mut first_row = true;
+        let mut column_names: Vec<String> = Vec::new();
+
+        for result in reader.records() {
+            let record = result?;
+            
+            if record.len() < 2 {
+                continue; // Skip rows that don't have at least symbol name and one IR count
+            }
+
+            let symbol_name = record.get(0).unwrap_or("").to_string();
+            
+            // Check if this is a header row
+            if first_row && symbol_name.eq_ignore_ascii_case("name") {
+                // This is a header row, extract column names
+                for i in 1..record.len() {
+                    column_names.push(record.get(i).unwrap_or(&format!("Run {}", i)).to_string());
+                }
+                first_row = false;
+                continue;
+            }
+
+            if first_row {
+                // No header row, generate default column names
+                for i in 1..record.len() {
+                    column_names.push(format!("Run {}", i));
+                }
+            }
+            first_row = false;
+
+            // Initialize runs if this is the first data row
+            if records.n_runs() == 0 {
+                records.run_names = column_names.clone();
+                records.runs_total_irs = vec![0; column_names.len()];
+            }
+
+            // Apply string replacements to symbol name
+            let processed_symbol_name = replacements.iter().fold(
+                std::borrow::Cow::Borrowed(symbol_name.as_str()),
+                |name, replacement| replacement.perform(name)
+            );
+
+            let mut symbol = RecordsSymbol {
+                name: processed_symbol_name.to_string(),
+                irs: Vec::new(),
+            };
+
+            // Parse IR counts for each run
+            for i in 1..record.len().min(column_names.len() + 1) {
+                if let Some(ir_str) = record.get(i) {
+                    let ir = ir_str.trim().parse::<u64>().unwrap_or(0);
+                    symbol.irs.push(ir);
+                    records.runs_total_irs[i - 1] += ir;
+                } else {
+                    symbol.irs.push(0);
+                }
+            }
+
+            // Pad with zeros if needed
+            while symbol.irs.len() < records.n_runs() {
+                symbol.irs.push(0);
+            }
+
+            records.symbols.push(symbol);
+        }
+
+        records.assert_invariants();
+        Ok(records)
+    }
+
+    /// Export records to a CSV file.
+    pub fn to_csv_file<P: AsRef<Path>>(&self, path: P) -> Result<()> {
+        let file = File::create(path)?;
+        let mut writer = csv::Writer::from_writer(file);
+
+        // Write header
+        let mut header = vec!["name".to_string()];
+        header.extend(self.run_names.iter().cloned());
+        writer.write_record(&header)?;
+
+        // Write symbol data
+        for symbol in &self.symbols {
+            let mut record = vec![symbol.name.clone()];
+            for ir in &symbol.irs {
+                record.push(ir.to_string());
+            }
+            writer.write_record(&record)?;
+        }
+
+        writer.flush()?;
+        Ok(())
+    }
+    
+    /// Export records to a CSV file with enhanced options including percentages and differences.
+    pub fn to_csv_file_enhanced<P: AsRef<Path>>(
+        &self,
+        path: P,
+        include_percentages: bool,
+        include_differences: bool,
+        include_all_data: bool,
+        reference_column: usize,
+    ) -> Result<()> {
+        let file = File::create(path)?;
+        let mut writer = csv::Writer::from_writer(file);
+
+        // Build header based on options
+        let mut header = vec!["name".to_string()];
+        
+        if include_all_data {
+            // Include everything: IR, differences, and percentages
+            for (i, run_name) in self.run_names.iter().enumerate() {
+                if i == reference_column {
+                    header.push(format!("{}_ir", run_name));
+                } else {
+                    header.push(format!("{}_ir", run_name));
+                    header.push(format!("{}_diff", run_name));
+                    header.push(format!("{}_pct", run_name));
+                }
+            }
+        } else {
+            // Selective inclusion
+            for (i, run_name) in self.run_names.iter().enumerate() {
+                header.push(format!("{}_ir", run_name));
+                if i != reference_column && include_differences {
+                    header.push(format!("{}_diff", run_name));
+                }
+                if i != reference_column && include_percentages {
+                    header.push(format!("{}_pct", run_name));
+                }
+            }
+        }
+        
+        writer.write_record(&header)?;
+
+        // Write symbol data with calculations
+        for symbol in &self.symbols {
+            let mut record = vec![symbol.name.clone()];
+            
+            let reference_ir = if reference_column < symbol.irs.len() {
+                symbol.irs[reference_column]
+            } else {
+                0
+            };
+            
+            if include_all_data {
+                for (i, &ir) in symbol.irs.iter().enumerate() {
+                    record.push(ir.to_string());
+                    
+                    if i != reference_column {
+                        // Calculate difference
+                        let diff = (ir as i64) - (reference_ir as i64);
+                        record.push(diff.to_string());
+                        
+                        // Calculate percentage
+                        let percentage = if reference_ir == 0 {
+                            if ir == 0 { 0.0 } else { 100.0 }
+                        } else {
+                            ((ir as f64 - reference_ir as f64) / reference_ir as f64) * 100.0
+                        };
+                        record.push(format!("{:.3}", percentage));
+                    }
+                }
+            } else {
+                // Selective data inclusion
+                for (i, &ir) in symbol.irs.iter().enumerate() {
+                    record.push(ir.to_string());
+                    
+                    if i != reference_column {
+                        if include_differences {
+                            let diff = (ir as i64) - (reference_ir as i64);
+                            record.push(diff.to_string());
+                        }
+                        
+                        if include_percentages {
+                            let percentage = if reference_ir == 0 {
+                                if ir == 0 { 0.0 } else { 100.0 }
+                            } else {
+                                ((ir as f64 - reference_ir as f64) / reference_ir as f64) * 100.0
+                            };
+                            record.push(format!("{:.3}", percentage));
+                        }
+                    }
+                }
+            }
+            
+            writer.write_record(&record)?;
+        }
+
+        writer.flush()?;
+        Ok(())
+    }
 }
 
 /// A symbol in the file and its IR count for a single run.

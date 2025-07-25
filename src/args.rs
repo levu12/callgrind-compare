@@ -172,14 +172,23 @@ impl Display for Show {
 #[derive(Default, Debug, Clone, Copy, PartialEq, Eq)]
 pub enum Color {
     /// Always color the output.
-    ///
-    /// TODO(ethiraric, 22/03/2024): Change to a saner default with `isatty`.
-    #[default]
     Always,
     /// Only color if the output is a terminal.
+    #[default]
     Default,
     /// Never color.
     Never,
+}
+
+impl Color {
+    /// Determine if colors should be used based on the setting and terminal detection.
+    pub fn should_color(&self) -> bool {
+        match self {
+            Color::Always => true,
+            Color::Default => atty::is(atty::Stream::Stdout),
+            Color::Never => false,
+        }
+    }
 }
 
 impl FromStr for Color {
@@ -251,10 +260,10 @@ pub struct Args {
     /// Whether the output should be colored or not.
     ///
     /// Accepted values are:
-    ///  * `always`: The output will always be colored (default)
-    ///  * `default`: The output is colored only if the output is a tty
+    ///  * `always`: The output will always be colored
+    ///  * `default`: The output is colored only if the output is a tty (default)
     ///  * `never`: The output is never colored
-    #[arg(short, long, default_value = "always")]
+    #[arg(short, long, default_value = "default")]
     pub color: Color,
     /// By which field to sort by.
     ///
@@ -280,6 +289,15 @@ pub struct Args {
     /// Path to an output file in which to write the IR as CSV.
     #[arg(long, default_value_t)]
     pub csv_export: String,
+    /// Include percentage differences in CSV export.
+    #[arg(long, default_value_t = false)]
+    pub csv_percentages: bool,
+    /// Include IR count differences in CSV export.
+    #[arg(long, default_value_t = false)]
+    pub csv_differences: bool,
+    /// Include all data (IR counts, differences, and percentages) in CSV export.
+    #[arg(long, default_value_t = false)]
+    pub csv_all_data: bool,
     /// A comma-separated list of column names for the CSV export.
     ///
     /// There must be as many names as there are `callgrind_annotate` files given as argument

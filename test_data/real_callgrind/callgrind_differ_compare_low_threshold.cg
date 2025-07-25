@@ -1,0 +1,180 @@
+--------------------------------------------------------------------------------
+Profile data file 'callgrind.out.callgrind_differ_compare' (creator: callgrind-3.18.1)
+--------------------------------------------------------------------------------
+I1 cache: 
+D1 cache: 
+LL cache: 
+Timerange: Basic block 0 - 1217354
+Trigger: Program termination
+Profiled target:  ./../../target/release/callgrind_differ simple_small_high_threshold.cg simple_large_high_threshold.cg (PID 70870, part 1)
+Events recorded:  Ir
+Events shown:     Ir
+Event sort order: Ir
+Thresholds:       90.0
+Include dirs:     
+User annotated:   
+Auto-annotation:  off
+
+--------------------------------------------------------------------------------
+Ir                 
+--------------------------------------------------------------------------------
+5,659,414 (100.0%)  PROGRAM TOTALS
+
+--------------------------------------------------------------------------------
+Ir                file:function
+--------------------------------------------------------------------------------
+274,328 ( 4.85%)  /rustc/6b00bc3880198600130e1cf62b8f8a93494488cc/library/core/src/slice/memchr.rs:core::slice::memchr::memchr_aligned [/home/lpv2013/callgrind_differ/target/release/callgrind_differ]
+241,179 ( 4.26%)  /rustc/6b00bc3880198600130e1cf62b8f8a93494488cc/library/core/src/fmt/mod.rs:core::fmt::write [/home/lpv2013/callgrind_differ/target/release/callgrind_differ]
+215,386 ( 3.81%)  ./malloc/./malloc/malloc.c:_int_free [/usr/lib/x86_64-linux-gnu/libc.so.6]
+166,294 ( 2.94%)  ./string/../sysdeps/x86_64/multiarch/memmove-vec-unaligned-erms.S:__memcpy_avx_unaligned_erms [/usr/lib/x86_64-linux-gnu/libc.so.6]
+153,144 ( 2.71%)  ./malloc/./malloc/malloc.c:_int_malloc [/usr/lib/x86_64-linux-gnu/libc.so.6]
+151,351 ( 2.67%)  ./string/../sysdeps/x86_64/multiarch/memcmp-avx2-movbe.S:__memcmp_avx2_movbe [/usr/lib/x86_64-linux-gnu/libc.so.6]
+144,024 ( 2.54%)  /rustc/6b00bc3880198600130e1cf62b8f8a93494488cc/library/std/src/io/stdio.rs:std::io::stdio::_print [/home/lpv2013/callgrind_differ/target/release/callgrind_differ]
+125,791 ( 2.22%)  /rustc/6b00bc3880198600130e1cf62b8f8a93494488cc/library/core/src/slice/memchr.rs:core::slice::memchr::memrchr [/home/lpv2013/callgrind_differ/target/release/callgrind_differ]
+120,020 ( 2.12%)  /rustc/6b00bc3880198600130e1cf62b8f8a93494488cc/library/std/src/io/stdio.rs:<&std::io::stdio::Stdout as std::io::Write>::write_fmt [/home/lpv2013/callgrind_differ/target/release/callgrind_differ]
+116,265 ( 2.05%)  ./malloc/./malloc/malloc.c:malloc [/usr/lib/x86_64-linux-gnu/libc.so.6]
+108,018 ( 1.91%)  /rustc/6b00bc3880198600130e1cf62b8f8a93494488cc/library/std/src/io/stdio.rs:std::io::stdio::print_to_buffer_if_capture_used [/home/lpv2013/callgrind_differ/target/release/callgrind_differ]
+102,145 ( 1.80%)  /rustc/6b00bc3880198600130e1cf62b8f8a93494488cc/library/std/src/io/stdio.rs:<std::io::stdio::StdoutLock as std::io::Write>::write_all [/home/lpv2013/callgrind_differ/target/release/callgrind_differ]
+ 99,377 ( 1.76%)  /home/lpv2013/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/str/validations.rs:<alloc::string::String as core::iter::traits::collect::FromIterator<char>>::from_iter
+ 94,456 ( 1.67%)  /home/lpv2013/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/slice/cmp.rs:callgrind_differ::runs::Run::add_ir
+ 84,679 ( 1.50%)  /home/lpv2013/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/ptr/non_null.rs:callgrind_differ::runs::Run::add_ir
+ 84,024 ( 1.48%)  /home/lpv2013/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/slice/cmp.rs:callgrind_differ::runs::Records::add_run
+ 77,469 ( 1.37%)  /home/lpv2013/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/ptr/non_null.rs:callgrind_differ::runs::Records::add_run
+ 75,668 ( 1.34%)  /home/lpv2013/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/raw_vec/mod.rs:alloc::raw_vec::RawVecInner<A>::reserve::do_reserve_and_handle [/home/lpv2013/callgrind_differ/target/release/callgrind_differ]
+ 66,011 ( 1.17%)  /rustc/6b00bc3880198600130e1cf62b8f8a93494488cc/library/std/src/io/mod.rs:<&std::io::stdio::Stdout as std::io::Write>::write_fmt
+ 63,972 ( 1.13%)  /rustc/6b00bc3880198600130e1cf62b8f8a93494488cc/library/core/src/slice/iter/macros.rs:core::slice::memchr::memrchr
+ 62,888 ( 1.11%)  /rustc/6b00bc3880198600130e1cf62b8f8a93494488cc/library/core/src/fmt/mod.rs:core::fmt::Write::write_char [/home/lpv2013/callgrind_differ/target/release/callgrind_differ]
+ 61,248 ( 1.08%)  ./malloc/./malloc/malloc.c:free [/usr/lib/x86_64-linux-gnu/libc.so.6]
+ 59,758 ( 1.06%)  /rustc/6b00bc3880198600130e1cf62b8f8a93494488cc/library/core/src/slice/iter/macros.rs:core::fmt::write
+ 54,009 ( 0.95%)  /rustc/6b00bc3880198600130e1cf62b8f8a93494488cc/library/std/src/sync/reentrant_lock.rs:<&std::io::stdio::Stdout as std::io::Write>::write_fmt
+ 51,828 ( 0.92%)  ./stdio-common/./stdio-common/vfscanf-internal.c:__vfscanf_internal [/usr/lib/x86_64-linux-gnu/libc.so.6]
+ 51,501 ( 0.91%)  /rustc/6b00bc3880198600130e1cf62b8f8a93494488cc/library/core/src/str/validations.rs:core::str::converts::from_utf8
+ 48,708 ( 0.86%)  /home/lpv2013/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/raw_vec/mod.rs:_ZN5alloc7raw_vec11finish_grow17h238e36cf69dd09a5E.llvm.18223041988455349707 [/home/lpv2013/callgrind_differ/target/release/callgrind_differ]
+ 46,496 ( 0.82%)  /home/lpv2013/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/char/methods.rs:core::str::<impl str>::trim_matches
+ 45,194 ( 0.80%)  /home/lpv2013/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/slice/iter/macros.rs:callgrind_differ::runs::Run::add_ir
+ 44,404 ( 0.78%)  ./malloc/./malloc/malloc.c:realloc [/usr/lib/x86_64-linux-gnu/libc.so.6]
+ 42,561 ( 0.75%)  ./elf/./elf/dl-lookup.c:do_lookup_x [/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2]
+ 42,007 ( 0.74%)  /rustc/6b00bc3880198600130e1cf62b8f8a93494488cc/library/core/src/slice/mod.rs:core::slice::memchr::memrchr
+ 42,007 ( 0.74%)  /rustc/6b00bc3880198600130e1cf62b8f8a93494488cc/library/core/src/sync/atomic.rs:<&std::io::stdio::Stdout as std::io::Write>::write_fmt
+ 40,726 ( 0.72%)  /home/lpv2013/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/str/validations.rs:core::str::<impl str>::trim_matches
+ 40,450 ( 0.71%)  ./elf/../sysdeps/x86_64/dl-machine.h:_dl_relocate_object
+ 39,597 ( 0.70%)  /home/lpv2013/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/slice/iter/macros.rs:callgrind_differ::runs::Records::add_run
+ 39,157 ( 0.69%)  ./malloc/./malloc/malloc.c:_int_realloc [/usr/lib/x86_64-linux-gnu/libc.so.6]
+ 38,060 ( 0.67%)  /home/lpv2013/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/char/methods.rs:<alloc::string::String as core::iter::traits::collect::FromIterator<char>>::from_iter
+ 37,615 ( 0.66%)  /home/lpv2013/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/str/iter.rs:<core::str::iter::Split<P> as core::iter::traits::iterator::Iterator>::next [/home/lpv2013/callgrind_differ/target/release/callgrind_differ]
+ 36,646 ( 0.65%)  /rustc/6b00bc3880198600130e1cf62b8f8a93494488cc/library/std/src/io/buffered/linewritershim.rs:<std::io::stdio::StdoutLock as std::io::Write>::write_all
+ 35,936 ( 0.63%)  /rustc/6b00bc3880198600130e1cf62b8f8a93494488cc/library/core/src/fmt/mod.rs:<char as core::fmt::Display>::fmt [/home/lpv2013/callgrind_differ/target/release/callgrind_differ]
+ 35,936 ( 0.63%)  /rustc/6b00bc3880198600130e1cf62b8f8a93494488cc/library/std/src/io/mod.rs:core::fmt::Write::write_char
+ 34,703 ( 0.61%)  ./elf/./elf/dl-lookup.c:_dl_lookup_symbol_x [/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2]
+ 30,773 ( 0.54%)  /rustc/6b00bc3880198600130e1cf62b8f8a93494488cc/library/std/src/io/buffered/bufwriter.rs:<std::io::stdio::StdoutLock as std::io::Write>::write_all
+ 30,180 ( 0.53%)  /rustc/6b00bc3880198600130e1cf62b8f8a93494488cc/library/std/src/io/mod.rs:<std::io::default_write_fmt::Adapter<T> as core::fmt::Write>::write_str [/home/lpv2013/callgrind_differ/target/release/callgrind_differ]
+ 30,066 ( 0.53%)  /rustc/6b00bc3880198600130e1cf62b8f8a93494488cc/library/core/src/num/mod.rs:core::slice::memchr::memrchr
+ 29,916 ( 0.53%)  /rustc/6b00bc3880198600130e1cf62b8f8a93494488cc/library/core/src/fmt/mod.rs:core::fmt::Formatter::pad [/home/lpv2013/callgrind_differ/target/release/callgrind_differ]
+ 29,466 ( 0.52%)  /home/lpv2013/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/raw_vec/mod.rs:<alloc::string::String as core::iter::traits::collect::FromIterator<char>>::from_iter
+ 27,445 ( 0.48%)  /home/lpv2013/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/str/pattern.rs:<core::str::iter::Split<P> as core::iter::traits::iterator::Iterator>::next
+ 27,068 ( 0.48%)  /rustc/6b00bc3880198600130e1cf62b8f8a93494488cc/library/core/src/num/bignum.rs:core::num::bignum::Big32x40::mul_pow2 [/home/lpv2013/callgrind_differ/target/release/callgrind_differ]
+ 26,944 ( 0.48%)  /home/lpv2013/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/slice/iter/macros.rs:core::str::<impl str>::trim_matches
+ 26,400 ( 0.47%)  /home/lpv2013/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/alloc/layout.rs:alloc::raw_vec::RawVecInner<A>::reserve::do_reserve_and_handle
+ 24,430 ( 0.43%)  ./stdlib/../stdlib/strtol_l.c:____strtoul_l_internal [/usr/lib/x86_64-linux-gnu/libc.so.6]
+ 24,283 ( 0.43%)  /rustc/6b00bc3880198600130e1cf62b8f8a93494488cc/library/core/src/ptr/non_null.rs:core::fmt::write
+ 24,004 ( 0.42%)  /rustc/6b00bc3880198600130e1cf62b8f8a93494488cc/library/core/src/cell.rs:<std::io::stdio::StdoutLock as std::io::Write>::write_all
+ 24,004 ( 0.42%)  /rustc/6b00bc3880198600130e1cf62b8f8a93494488cc/library/core/src/slice/index.rs:core::slice::memchr::memrchr
+ 23,974 ( 0.42%)  /home/lpv2013/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/slice/iter/macros.rs:<alloc::string::String as core::iter::traits::collect::FromIterator<char>>::from_iter
+ 23,209 ( 0.41%)  /rustc/6b00bc3880198600130e1cf62b8f8a93494488cc/library/core/src/num/bignum.rs:core::num::flt2dec::strategy::dragon::format_exact
+ 23,016 ( 0.41%)  /home/lpv2013/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/ptr/non_null.rs:<alloc::string::String as core::iter::traits::collect::FromIterator<char>>::from_iter
+ 22,609 ( 0.40%)  ./elf/./elf/do-rel.h:_dl_relocate_object
+ 22,460 ( 0.40%)  /rustc/6b00bc3880198600130e1cf62b8f8a93494488cc/library/core/src/char/methods.rs:core::fmt::Write::write_char
+ 22,256 ( 0.39%)  /rustc/6b00bc3880198600130e1cf62b8f8a93494488cc/library/std/src/sys/alloc/unix.rs:_RNvCs691rhTbG0Ee_7___rustc11___rdl_alloc
+ 22,122 ( 0.39%)  /home/lpv2013/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/str/iter.rs:core::str::<impl str>::trim_matches
+ 20,242 ( 0.36%)  /rustc/6b00bc3880198600130e1cf62b8f8a93494488cc/library/core/src/ptr/non_null.rs:core::slice::memchr::memrchr
+ 19,176 ( 0.34%)  /rustc/6b00bc3880198600130e1cf62b8f8a93494488cc/library/core/src/fmt/mod.rs:core::fmt::Formatter::pad_integral [/home/lpv2013/callgrind_differ/target/release/callgrind_differ]
+ 19,140 ( 0.34%)  ./elf/./elf/dl-tunables.c:__GI___tunables_init [/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2]
+ 19,120 ( 0.34%)  /home/lpv2013/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/str/pattern.rs:core::iter::traits::iterator::Iterator::nth
+ 19,108 ( 0.34%)  /home/lpv2013/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/string.rs:<alloc::string::String as core::iter::traits::collect::FromIterator<char>>::from_iter [/home/lpv2013/callgrind_differ/target/release/callgrind_differ]
+ 19,069 ( 0.34%)  /home/lpv2013/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/result.rs:_ZN5alloc7raw_vec11finish_grow17h238e36cf69dd09a5E.llvm.18223041988455349707
+ 18,515 ( 0.33%)  /rustc/6b00bc3880198600130e1cf62b8f8a93494488cc/library/alloc/src/vec/mod.rs:<std::io::stdio::StdoutLock as std::io::Write>::write_all
+ 18,387 ( 0.32%)  /rustc/6b00bc3880198600130e1cf62b8f8a93494488cc/library/core/src/intrinsics/mod.rs:<std::io::stdio::StdoutLock as std::io::Write>::write_all
+ 18,003 ( 0.32%)  /rustc/6b00bc3880198600130e1cf62b8f8a93494488cc/library/core/src/cell.rs:<&std::io::stdio::Stdout as std::io::Write>::write_fmt
+ 18,003 ( 0.32%)  /rustc/6b00bc3880198600130e1cf62b8f8a93494488cc/library/core/src/ptr/mod.rs:core::slice::memchr::memrchr
+ 18,003 ( 0.32%)  /rustc/6b00bc3880198600130e1cf62b8f8a93494488cc/library/std/src/sys/sync/mutex/futex.rs:<&std::io::stdio::Stdout as std::io::Write>::write_fmt
+ 17,643 ( 0.31%)  /home/lpv2013/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/io/mod.rs:std::io::append_to_string [/home/lpv2013/callgrind_differ/target/release/callgrind_differ]
+ 17,550 ( 0.31%)  /rustc/6b00bc3880198600130e1cf62b8f8a93494488cc/library/core/src/fmt/rt.rs:core::fmt::write
+ 16,914 ( 0.30%)  /home/lpv2013/callgrind_differ/src/display.rs:callgrind_differ::display::print_right [/home/lpv2013/callgrind_differ/target/release/callgrind_differ]
+ 15,883 ( 0.28%)  /home/lpv2013/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/iter/adapters/skip_while.rs:<alloc::string::String as core::iter::traits::collect::FromIterator<char>>::from_iter
+ 15,533 ( 0.27%)  /rustc/6b00bc3880198600130e1cf62b8f8a93494488cc/library/core/src/num/mod.rs:core::slice::memchr::memchr_aligned
+ 15,224 ( 0.27%)  /home/lpv2013/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/iter/traits/iterator.rs:<alloc::string::String as core::iter::traits::collect::FromIterator<char>>::from_iter
+ 15,224 ( 0.27%)  /home/lpv2013/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/num/uint_macros.rs:<alloc::string::String as core::iter::traits::collect::FromIterator<char>>::from_iter
+ 15,083 ( 0.27%)  /home/lpv2013/callgrind_differ/src/display.rs:callgrind_differ::display::Displayer::show_run_details [/home/lpv2013/callgrind_differ/target/release/callgrind_differ]
+ 14,725 ( 0.26%)  ./malloc/./malloc/malloc.c:malloc_consolidate [/usr/lib/x86_64-linux-gnu/libc.so.6]
+ 14,379 ( 0.25%)  /rustc/6b00bc3880198600130e1cf62b8f8a93494488cc/library/core/src/fmt/num.rs:core::fmt::num::imp::<impl u64>::_fmt [/home/lpv2013/callgrind_differ/target/release/callgrind_differ]
+ 14,372 ( 0.25%)  /home/lpv2013/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/iter/range.rs:core::iter::traits::iterator::Iterator::nth
+ 13,934 ( 0.25%)  /rustc/6b00bc3880198600130e1cf62b8f8a93494488cc/library/core/src/num/flt2dec/strategy/dragon.rs:core::num::flt2dec::strategy::dragon::format_exact [/home/lpv2013/callgrind_differ/target/release/callgrind_differ]
+ 13,814 ( 0.24%)  ./string/../sysdeps/x86_64/strcmp.S:strcmp [/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2]
+ 13,100 ( 0.23%)  /home/lpv2013/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/num/uint_macros.rs:<core::str::iter::Split<P> as core::iter::traits::iterator::Iterator>::next
+ 13,066 ( 0.23%)  /home/lpv2013/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/fmt/rt.rs:callgrind_differ::display::print_left
+ 12,466 ( 0.22%)  /home/lpv2013/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/itertools-0.12.1/src/lib.rs:itertools::Itertools::join [/home/lpv2013/callgrind_differ/target/release/callgrind_differ]
+ 12,057 ( 0.21%)  /home/lpv2013/callgrind_differ/src/callgrind.rs:callgrind_differ::callgrind::parse [/home/lpv2013/callgrind_differ/target/release/callgrind_differ]
+ 12,039 ( 0.21%)  /home/lpv2013/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/iter/traits/iterator.rs:core::iter::traits::iterator::Iterator::nth [/home/lpv2013/callgrind_differ/target/release/callgrind_differ]
+ 12,002 ( 0.21%)  /rustc/6b00bc3880198600130e1cf62b8f8a93494488cc/library/core/src/mem/mod.rs:<std::io::stdio::StdoutLock as std::io::Write>::write_all
+ 12,002 ( 0.21%)  /rustc/6b00bc3880198600130e1cf62b8f8a93494488cc/library/core/src/num/flt2dec/strategy/grisu.rs:core::num::flt2dec::strategy::grisu::format_exact_opt [/home/lpv2013/callgrind_differ/target/release/callgrind_differ]
+ 12,002 ( 0.21%)  /rustc/6b00bc3880198600130e1cf62b8f8a93494488cc/library/core/src/option.rs:<&std::io::stdio::Stdout as std::io::Write>::write_fmt
+ 12,002 ( 0.21%)  /rustc/6b00bc3880198600130e1cf62b8f8a93494488cc/library/core/src/ptr/mod.rs:<&std::io::stdio::Stdout as std::io::Write>::write_fmt
+ 12,002 ( 0.21%)  /rustc/6b00bc3880198600130e1cf62b8f8a93494488cc/library/core/src/slice/mod.rs:<std::io::stdio::StdoutLock as std::io::Write>::write_all
+ 11,874 ( 0.21%)  /rustc/6b00bc3880198600130e1cf62b8f8a93494488cc/library/alloc/src/raw_vec/mod.rs:<std::io::stdio::StdoutLock as std::io::Write>::write_all
+ 11,500 ( 0.20%)  ./termios/../sysdeps/unix/sysv/linux/tcgetattr.c:tcgetattr [/usr/lib/x86_64-linux-gnu/libc.so.6]
+ 11,294 ( 0.20%)  /home/lpv2013/callgrind_differ/src/display.rs:callgrind_differ::display::print_left [/home/lpv2013/callgrind_differ/target/release/callgrind_differ]
+ 11,230 ( 0.20%)  /home/lpv2013/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/ptr/non_null.rs:core::str::<impl str>::trim_matches
+ 10,898 ( 0.19%)  /home/lpv2013/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/fmt/rt.rs:callgrind_differ::display::print_right
+ 10,262 ( 0.18%)  /home/lpv2013/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/string.rs:<alloc::string::String as core::fmt::Write>::write_str [/home/lpv2013/callgrind_differ/target/release/callgrind_differ]
+ 10,189 ( 0.18%)  /home/lpv2013/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/iter/adapters/skip_while.rs:<core::iter::adapters::skip_while::SkipWhile<I,P> as core::iter::traits::iterator::Iterator>::next [/home/lpv2013/callgrind_differ/target/release/callgrind_differ]
+ 10,083 ( 0.18%)  /home/lpv2013/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/io/mod.rs:<std::io::Lines<B> as core::iter::traits::iterator::Iterator>::next [/home/lpv2013/callgrind_differ/target/release/callgrind_differ]
+ 10,032 ( 0.18%)  ./malloc/./malloc/malloc.c:unlink_chunk.constprop.0 [/usr/lib/x86_64-linux-gnu/libc.so.6]
+  9,822 ( 0.17%)  /home/lpv2013/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/vec/mod.rs:<alloc::string::String as core::iter::traits::collect::FromIterator<char>>::from_iter
+  9,600 ( 0.17%)  /home/lpv2013/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/cmp.rs:alloc::raw_vec::RawVecInner<A>::reserve::do_reserve_and_handle
+  9,530 ( 0.17%)  /home/lpv2013/callgrind_differ/src/display.rs:callgrind_differ::display::display [/home/lpv2013/callgrind_differ/target/release/callgrind_differ]
+  9,336 ( 0.16%)  /rustc/6b00bc3880198600130e1cf62b8f8a93494488cc/library/core/src/slice/iter/macros.rs:core::num::flt2dec::strategy::dragon::format_exact
+  9,330 ( 0.16%)  /rustc/6b00bc3880198600130e1cf62b8f8a93494488cc/library/alloc/src/string.rs:<alloc::string::String as core::fmt::Write>::write_str [/home/lpv2013/callgrind_differ/target/release/callgrind_differ]
+  9,254 ( 0.16%)  /rustc/6b00bc3880198600130e1cf62b8f8a93494488cc/library/std/src/sys/alloc/unix.rs:_RNvCs691rhTbG0Ee_7___rustc13___rdl_realloc
+  9,248 ( 0.16%)  /rustc/6b00bc3880198600130e1cf62b8f8a93494488cc/library/core/src/str/converts.rs:core::str::converts::from_utf8 [/home/lpv2013/callgrind_differ/target/release/callgrind_differ]
+  9,203 ( 0.16%)  /home/lpv2013/callgrind_differ/src/runs.rs:callgrind_differ::runs::Run::add_ir [/home/lpv2013/callgrind_differ/target/release/callgrind_differ]
+  9,081 ( 0.16%)  ./elf/./elf/dl-lookup.c:check_match [/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2]
+  8,874 ( 0.16%)  /rustc/6b00bc3880198600130e1cf62b8f8a93494488cc/library/core/src/slice/index.rs:core::fmt::write
+  8,864 ( 0.16%)  /rustc/6b00bc3880198600130e1cf62b8f8a93494488cc/library/core/src/fmt/mod.rs:<str as core::fmt::Display>::fmt [/home/lpv2013/callgrind_differ/target/release/callgrind_differ]
+  8,803 ( 0.16%)  /rustc/6b00bc3880198600130e1cf62b8f8a93494488cc/library/core/src/num/flt2dec/mod.rs:core::fmt::float::float_to_decimal_common_exact
+  8,772 ( 0.15%)  /home/lpv2013/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/raw_vec/mod.rs:<alloc::string::String as core::fmt::Write>::write_str
+  8,754 ( 0.15%)  /home/lpv2013/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/slice/sort/shared/smallsort.rs:core::slice::sort::shared::smallsort::small_sort_general_with_scratch [/home/lpv2013/callgrind_differ/target/release/callgrind_differ]
+  8,606 ( 0.15%)  /home/lpv2013/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/str/iter.rs:core::iter::traits::iterator::Iterator::nth
+  8,573 ( 0.15%)  /home/lpv2013/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/vec/mod.rs:std::io::append_to_string
+  8,352 ( 0.15%)  ./malloc/./malloc/arena.c:free
+  8,070 ( 0.14%)  /home/lpv2013/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/raw_vec/mod.rs:std::io::append_to_string
+  7,739 ( 0.14%)  /rustc/6b00bc3880198600130e1cf62b8f8a93494488cc/library/core/src/fmt/mod.rs:core::fmt::Formatter::write_formatted_parts [/home/lpv2013/callgrind_differ/target/release/callgrind_differ]
+  7,570 ( 0.13%)  /home/lpv2013/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/fmt/rt.rs:callgrind_differ::display::display
+  7,520 ( 0.13%)  /rustc/6b00bc3880198600130e1cf62b8f8a93494488cc/library/core/src/fmt/mod.rs:core::fmt::Formatter::pad_integral::write_prefix [/home/lpv2013/callgrind_differ/target/release/callgrind_differ]
+  7,500 ( 0.13%)  ./io/../sysdeps/posix/isatty.c:isatty [/usr/lib/x86_64-linux-gnu/libc.so.6]
+  7,373 ( 0.13%)  /home/lpv2013/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/raw_vec/mod.rs:alloc::raw_vec::RawVec<T,A>::grow_one [/home/lpv2013/callgrind_differ/target/release/callgrind_differ]
+  7,293 ( 0.13%)  /home/lpv2013/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/alloc.rs:callgrind_differ::callgrind::parse
+  7,245 ( 0.13%)  /home/lpv2013/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/slice/sort/stable/quicksort.rs:core::slice::sort::stable::quicksort::quicksort'2 [/home/lpv2013/callgrind_differ/target/release/callgrind_differ]
+  7,201 ( 0.13%)  /home/lpv2013/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/str/mod.rs:callgrind_differ::callgrind::parse
+  7,200 ( 0.13%)  /home/lpv2013/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/result.rs:alloc::raw_vec::RawVecInner<A>::reserve::do_reserve_and_handle
+  7,199 ( 0.13%)  /home/lpv2013/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/str/pattern.rs:callgrind_differ::callgrind::parse
+  7,045 ( 0.12%)  /home/lpv2013/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/intrinsics/mod.rs:core::slice::sort::shared::smallsort::small_sort_general_with_scratch
+  7,036 ( 0.12%)  /home/lpv2013/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/slice/memchr.rs:<core::str::iter::Split<P> as core::iter::traits::iterator::Iterator>::next
+  6,889 ( 0.12%)  /home/lpv2013/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/slice/cmp.rs:core::slice::sort::shared::smallsort::small_sort_general_with_scratch
+  6,694 ( 0.12%)  /home/lpv2013/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/num/uint_macros.rs:core::iter::traits::iterator::Iterator::nth
+  6,575 ( 0.12%)  /rustc/6b00bc3880198600130e1cf62b8f8a93494488cc/library/alloc/src/raw_vec/mod.rs:alloc::raw_vec::finish_grow [/home/lpv2013/callgrind_differ/target/release/callgrind_differ]
+  6,534 ( 0.12%)  /rustc/6b00bc3880198600130e1cf62b8f8a93494488cc/library/core/src/ptr/mod.rs:core::slice::memchr::memchr_aligned
+  6,401 ( 0.11%)  /home/lpv2013/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/raw_vec/mod.rs:callgrind_differ::runs::Run::add_ir
+  6,269 ( 0.11%)  /home/lpv2013/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/slice/iter/macros.rs:callgrind_differ::display::display
+  6,250 ( 0.11%)  /home/lpv2013/callgrind_differ/src/runs.rs:callgrind_differ::runs::Records::add_run [/home/lpv2013/callgrind_differ/target/release/callgrind_differ]
+  6,129 ( 0.11%)  /rustc/6b00bc3880198600130e1cf62b8f8a93494488cc/library/core/src/ptr/mut_ptr.rs:<std::io::stdio::StdoutLock as std::io::Write>::write_all
+  6,125 ( 0.11%)  /home/lpv2013/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/slice/iter/macros.rs:callgrind_differ::display::Displayer::show_run_details
+  6,066 ( 0.11%)  /rustc/6b00bc3880198600130e1cf62b8f8a93494488cc/library/core/src/cmp.rs:core::slice::memchr::memchr_aligned
+  6,003 ( 0.11%)  /rustc/6b00bc3880198600130e1cf62b8f8a93494488cc/library/std/src/sync/once_lock.rs:std::io::stdio::_print
+  6,001 ( 0.11%)  /rustc/6b00bc3880198600130e1cf62b8f8a93494488cc/library/alloc/src/sync.rs:std::io::stdio::print_to_buffer_if_capture_used
+  6,001 ( 0.11%)  /rustc/6b00bc3880198600130e1cf62b8f8a93494488cc/library/core/src/sync/atomic.rs:std::io::stdio::_print
+  6,001 ( 0.11%)  /rustc/6b00bc3880198600130e1cf62b8f8a93494488cc/library/core/src/sync/atomic.rs:std::io::stdio::print_to_buffer_if_capture_used
+  6,001 ( 0.11%)  /rustc/6b00bc3880198600130e1cf62b8f8a93494488cc/library/std/src/sync/reentrant_lock.rs:<std::io::stdio::StdoutLock as std::io::Write>::write_all
+  6,001 ( 0.11%)  /rustc/6b00bc3880198600130e1cf62b8f8a93494488cc/library/std/src/sys/sync/once/futex.rs:std::io::stdio::_print
+  6,000 ( 0.11%)  /rustc/6b00bc3880198600130e1cf62b8f8a93494488cc/library/alloc/src/raw_vec/mod.rs:alloc::raw_vec::RawVecInner<A>::reserve::do_reserve_and_handle [/home/lpv2013/callgrind_differ/target/release/callgrind_differ]
+  5,964 ( 0.11%)  /home/lpv2013/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/intrinsics/mod.rs:core::slice::sort::stable::quicksort::quicksort'2
+

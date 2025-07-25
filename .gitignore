@@ -1,1 +1,34 @@
-/target
+# Rust build artifacts
+/target/
+
+# Callgrind output files
+callgrind.out.*
+
+# Generated executables
+generate_workload
+
+# Test data that can be regenerated
+/test_data/large_callgrind/
+/test_data/*.csv
+
+# Generated executables in test_data
+test_data/**/test_program_*
+
+# Editor files
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.bak
+
+# Backup files
+*~
+*.orig
