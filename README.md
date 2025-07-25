@@ -233,4 +233,12 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Acknowledgments
 
-This project builds upon ideas from performance analysis tools in the valgrind ecosystem, providing enhanced functionality for modern development workflows.
+This project was inspired by and builds upon [callgrind_differ](https://github.com/Ethiraric/callgrind_differ) by Ethiraric. While `callgrind-compare` has evolved significantly with new features like CSV support, mixed input types, advanced column naming, and enhanced usability, we acknowledge the original work that provided the foundation for comparing callgrind_annotate outputs.
+
+Key enhancements in `callgrind-compare`:
+- Mixed input support (callgrind files + CSV files)
+- Advanced CSV export with comprehensive data options
+- Smart terminal detection and colored output
+- Custom column naming and flexible sorting
+- Enhanced symbol name processing
+- Modern CLI with comprehensive help system
