@@ -4,8 +4,6 @@ A modern tool to compare callgrind_annotate outputs and track performance change
 
 `callgrind-compare` allows for precise analysis of instruction count differences between different versions of your programs by comparing the output of valgrind's `callgrind_annotate` tool.
 
-**Note:** Instruction counting is one metric among many for performance analysis. While not an absolute measure of performance, it can be valuable for understanding algorithmic changes and their impact on program execution.
-
 ## Installation
 
 ```bash
