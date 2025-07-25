@@ -50,8 +50,8 @@ fn is_csv_file(path: &str) -> Result<bool> {
 
 /// Parse inputs from the configuration into a [`Records`].
 ///
-/// Files are detected as CSV or callgrind_annotate based on content, not extension.
-/// CSV files are loaded as multiple runs, callgrind_annotate files as single runs.
+/// Files are detected as CSV or `callgrind_annotate` based on content, not extension.
+/// CSV files are loaded as multiple runs, `callgrind_annotate` files as single runs.
 fn parse_records(config: &Args) -> Result<Records> {
     let mut records = Records::new();
     let mut callgrind_file_count = 0;
@@ -78,7 +78,7 @@ fn parse_records(config: &Args) -> Result<Records> {
             
             // Apply custom name if available
             if callgrind_file_count < config.csv_names.len() {
-                run.name = config.csv_names[callgrind_file_count].clone();
+                run.name.clone_from(&config.csv_names[callgrind_file_count]);
             } else if run.name.is_empty() {
                 // If no name provided and run doesn't have a name, use filename
                 run.name = Path::new(input)
@@ -119,9 +119,8 @@ fn main() -> Result<()> {
     if !config.csv_export.is_empty() {
         // Determine reference column for calculations
         let reference_column = match &config.relative_to {
-            RelativeTo::First => 0,
             RelativeTo::Last => records.n_runs().saturating_sub(1),
-            RelativeTo::Previous => 0, // For previous, we'll use first as reference in CSV
+            RelativeTo::Previous | RelativeTo::First => 0, // For previous, we'll use first as reference in CSV
             RelativeTo::Column(x) => (*x as usize).min(records.n_runs().saturating_sub(1)),
         };
 

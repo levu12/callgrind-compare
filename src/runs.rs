@@ -217,7 +217,7 @@ impl Records {
             if first_row && symbol_name.eq_ignore_ascii_case("name") {
                 // This is a header row, extract column names
                 for i in 1..record.len() {
-                    column_names.push(record.get(i).unwrap_or(&format!("Run {}", i)).to_string());
+                    column_names.push(record.get(i).unwrap_or(&format!("Run {i}")).to_string());
                 }
                 first_row = false;
                 continue;
@@ -226,14 +226,14 @@ impl Records {
             if first_row {
                 // No header row, generate default column names
                 for i in 1..record.len() {
-                    column_names.push(format!("Run {}", i));
+                    column_names.push(format!("Run {i}"));
                 }
             }
             first_row = false;
 
             // Initialize runs if this is the first data row
             if records.n_runs() == 0 {
-                records.run_names = column_names.clone();
+                records.run_names.clone_from(&column_names);
                 records.runs_total_irs = vec![0; column_names.len()];
             }
 
@@ -313,22 +313,22 @@ impl Records {
             // Include everything: IR, differences, and percentages
             for (i, run_name) in self.run_names.iter().enumerate() {
                 if i == reference_column {
-                    header.push(format!("{}_ir", run_name));
+                    header.push(format!("{run_name}_ir"));
                 } else {
-                    header.push(format!("{}_ir", run_name));
-                    header.push(format!("{}_diff", run_name));
-                    header.push(format!("{}_pct", run_name));
+                    header.push(format!("{run_name}_ir"));
+                    header.push(format!("{run_name}_diff"));
+                    header.push(format!("{run_name}_pct"));
                 }
             }
         } else {
             // Selective inclusion
             for (i, run_name) in self.run_names.iter().enumerate() {
-                header.push(format!("{}_ir", run_name));
+                header.push(format!("{run_name}_ir"));
                 if i != reference_column && include_differences {
-                    header.push(format!("{}_diff", run_name));
+                    header.push(format!("{run_name}_diff"));
                 }
                 if i != reference_column && include_percentages {
-                    header.push(format!("{}_pct", run_name));
+                    header.push(format!("{run_name}_pct"));
                 }
             }
         }
@@ -351,6 +351,7 @@ impl Records {
                     
                     if i != reference_column {
                         // Calculate difference
+                        #[allow(clippy::cast_possible_wrap)]
                         let diff = (ir as i64) - (reference_ir as i64);
                         record.push(diff.to_string());
                         
@@ -360,7 +361,7 @@ impl Records {
                         } else {
                             ((ir as f64 - reference_ir as f64) / reference_ir as f64) * 100.0
                         };
-                        record.push(format!("{:.3}", percentage));
+                        record.push(format!("{percentage:.3}"));
                     }
                 }
             } else {
@@ -370,6 +371,7 @@ impl Records {
                     
                     if i != reference_column {
                         if include_differences {
+                            #[allow(clippy::cast_possible_wrap)]
                             let diff = (ir as i64) - (reference_ir as i64);
                             record.push(diff.to_string());
                         }
@@ -380,7 +382,7 @@ impl Records {
                             } else {
                                 ((ir as f64 - reference_ir as f64) / reference_ir as f64) * 100.0
                             };
-                            record.push(format!("{:.3}", percentage));
+                            record.push(format!("{percentage:.3}"));
                         }
                     }
                 }

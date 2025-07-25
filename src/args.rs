@@ -2,6 +2,7 @@ use std::{borrow::Cow, fmt::Display, path::Path, str::FromStr};
 
 use anyhow::{bail, Result};
 use clap::Parser;
+use is_terminal::IsTerminal;
 use itertools::Itertools;
 
 /// The field on which to sort the output by.
@@ -182,10 +183,10 @@ pub enum Color {
 
 impl Color {
     /// Determine if colors should be used based on the setting and terminal detection.
-    pub fn should_color(&self) -> bool {
+    pub fn should_color(self) -> bool {
         match self {
             Color::Always => true,
-            Color::Default => atty::is(atty::Stream::Stdout),
+            Color::Default => std::io::stdout().is_terminal(),
             Color::Never => false,
         }
     }
@@ -252,7 +253,8 @@ impl Display for StringReplacement {
 
 /// A tool to help keep track of performance changes over time.
 #[derive(Parser, Debug)]
-#[command()]
+#[command(version, about, long_about = None)]
+#[allow(clippy::struct_excessive_bools)]
 pub struct Args {
     /// Show all lines, even those without a change.
     #[arg(short, long, default_value_t = false)]
@@ -371,7 +373,7 @@ impl Args {
                 .filter(|file| {
                     !Path::new(file)
                         .extension()
-                        .map_or(false, |ext| ext.eq_ignore_ascii_case("csv"))
+                        .is_some_and(|ext| ext.eq_ignore_ascii_case("csv"))
                 })
                 .count();
             if runs_count != self.csv_names.len() {

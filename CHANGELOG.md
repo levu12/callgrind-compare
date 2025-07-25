@@ -1,12 +1,16 @@
 # Changelog
 
-## Recent Major Updates
+All notable changes to this project will be documented in this file.
 
-### Enhanced CSV Export & Mixed File Support
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-**New Features:**
-- **Terminal Color Detection**: Added smart terminal detection via `atty` crate with `--color default` mode
-- **CSV Input Support**: Can now read existing CSV files as input alongside callgrind files
+## [0.1.0] - 2025-07-25
+
+### Added
+- **Initial release** - A tool to compare callgrind_annotate outputs and track performance changes over time
+- **Terminal Color Detection**: Smart terminal detection with `--color default` mode for automatic color handling
+- **CSV Input Support**: Read existing CSV files as input alongside callgrind files
 - **Enhanced CSV Export Options**:
   - `--csv-percentages`: Export with percentage calculations 
   - `--csv-differences`: Export with raw difference calculations
@@ -14,38 +18,13 @@
 - **Custom Column Naming**: Use `--csv-names` to provide meaningful names for your data columns
 - **Mixed File Type Processing**: Seamlessly process combinations of callgrind and CSV files in any order
 - **Content-Based File Detection**: Smart file type detection by analyzing content, not relying on file extensions
+- **Flexible Sorting**: Sort by symbol name, instruction counts, or any column
+- **Reference Column Selection**: Choose which column to use as reference for comparisons
+- **Symbol Name Processing**: String replacement capabilities for cleaner symbol names
+- **Comprehensive CLI**: Full command-line interface with help and version information
 
-**Technical Improvements:**
-- Enhanced `Records::to_csv_file_enhanced()` method with percentage and difference calculations
-- Added `is_csv_file()` function for reliable content-based file type detection
-- Updated color system with intelligent terminal detection using `atty::is()`
-- Improved CLI argument structure with new CSV-specific flags
-
-**Testing & Validation:**
-- Generated comprehensive test data using actual callgrind profiling
-- Validated mixed file type processing with callgrind + CSV combinations
-- Tested all CSV export modes with real data
-- Confirmed percentage calculations and difference computations are accurate
-
-**Files Modified:**
-- `src/args.rs`: Added CSV export flags and enhanced color detection
-- `src/runs.rs`: Implemented `to_csv_file_enhanced()` with percentage/difference calculations
-- `src/main.rs`: Added content-based file detection and enhanced CSV export logic
-- `src/display.rs`: Updated terminal color handling
-- `README.md`: Comprehensive documentation update with examples and feature descriptions
-- `Cargo.toml`: Added `atty` dependency for terminal detection
-
-**Example Usage:**
-```bash
-# Mixed file processing with custom names and comprehensive CSV export
-./callgrind_differ baseline.cg optimized.csv final.cg \
-  --csv-export results.csv \
-  --csv-all-data \
-  --csv-names "Baseline,Optimized,Final"
-
-# Percentage-only export with smart terminal colors
-./callgrind_differ run1.cg run2.cg \
-  --csv-export analysis.csv \
-  --csv-percentages \
-  --color default
-```
+### Technical Details
+- Uses modern `is-terminal` crate for terminal detection (replacing deprecated `atty`)
+- Built with Rust 2021 edition
+- Comprehensive test suite including integration tests
+- Well-documented codebase with extensive README and examples
