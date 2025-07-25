@@ -9,16 +9,6 @@ development.
 be used to speed up programs. There are many more factors to take into account. There are however use-cases where
 instruction count may relate closely to wall-time performance and my use-case was one of these.
 
-## 🚨 IMPORTANT: Using Real Callgrind Data
-
-**This tool is designed to work exclusively with real `callgrind_annotate` output files.** You must:
-
-1. **Run your program through valgrind's callgrind tool**
-2. **Process the callgrind.out file with `callgrind_annotate`** 
-3. **Feed the annotate output to callgrind_differ**
-
-**Do not attempt to generate synthetic or fake callgrind data** - the tool expects the specific format produced by the official `callgrind_annotate` command.
-
 ## Quick Start
 
 ```bash
