@@ -1,12 +1,12 @@
 [package]
-name = "callgrind_differ"
+name = "callgrind-compare"
 version = "0.1.0"
 edition = "2021"
 authors = ["levu12"]
-description = "A tool to compare callgrind_annotate outputs and track performance changes over time"
+description = "A modern tool to compare callgrind_annotate outputs and track performance changes over time. Enhanced fork with new features."
 readme = "README.md"
-homepage = "https://github.com/levu12/callgrind_differ"
-repository = "https://github.com/levu12/callgrind_differ"
+homepage = "https://github.com/levu12/callgrind-compare"
+repository = "https://github.com/levu12/callgrind-compare"
 license = "MIT"
 keywords = ["callgrind", "performance", "profiling", "valgrind", "comparison"]
 categories = ["command-line-utilities", "development-tools::profiling"]
@@ -17,6 +17,10 @@ exclude = [
     ".vscode/",
     ".idea/",
 ]
+
+[[bin]]
+name = "callgrind-compare"
+path = "src/main.rs"
 
 [dependencies]
 anyhow = { version = "1.0.79", features = ["backtrace"] }
